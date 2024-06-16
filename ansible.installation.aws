@@ -1,0 +1,33 @@
+Step 1 — Install the latest version of a packages 
+
+How to install Ansible 2 on AWS Linux 2 
+
+sudo yum update -y 
+
+Step 2 — Use the amazon-linux-extras command to install Ansible.
+
+sudo amazon-linux-extras install ansible2 -y 
+
+Step 3– Check Ansible Version 
+
+ansible --version 
+
+
+
+/etc/ansible/ansible.cfg ---> configfile 
+
+ansible localhost -m ping 
+
+
+sudo hostnamectl set-hostname controlnode ---> to change hostname to controlnode 
+
+bash ---> to update 
+
+ansible all -m ping
+
+ansible all --list-hosts 
+
+
+
+
+
