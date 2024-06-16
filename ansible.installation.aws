@@ -25,7 +25,11 @@ bash ---> to update
 
 ansible all -m ping
 
-ansible all --list-hosts 
+ansible all --list-hosts ---> to check hosts 
+
+ssh-copy-id -f ec2-user@<privateip> ----> of manage node 
+
+ansible all -m yum -a "name=git" -b 
 
 
 
