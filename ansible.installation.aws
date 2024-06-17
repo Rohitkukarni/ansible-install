@@ -1,4 +1,5 @@
 Step 1 — Install the latest version of a packages
+sudo hostnamectl set-hostname controlnode ---> to change hostname to controlnode 
 
 sudo yum update -y 
 
@@ -10,22 +11,42 @@ Step 3– Check Ansible Version
 
 ansible --version 
 
-
-
 /etc/ansible/ansible.cfg ---> configfile 
+
+vim /etc/ansible/hosts 
+
+enter private ip of managed node line number 25 
+
+ansible all -m ping
 
 ansible localhost -m ping 
 
+ansible all --list-hosts
 
 sudo hostnamectl set-hostname controlnode ---> to change hostname to controlnode 
 
 bash ---> to update 
 
-ansible all -m ping
+cd .ssh 
 
-ansible all --list-hosts ---> to check hosts 
+manage node 
 
-ssh-copy-id -f ec2-user@<privateip> ----> of manage node 
+vim /etc/ssh/sshd_config 
+
+1 uncomment ----> remobve # 
+
+63 comment ----> comment means #
+
+
+systemctl restart sshd 
+
+passwd ec2-user 
+
+go into into control node 
+
+cd .ssh 
+
+sudo ssh-copy-id -f ec2-user@<privateip> ----> of manage node 
 
 ansible all -m yum -a "name=git" -b 
 
